@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome for simple icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Expense Tracker</h1>
+        <form id="expense-form">
+            <div class="form-group">
+                <label for="name"><i class="fa-solid fa-tag"></i> Expense Name</label>
+                <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+                <label for="amount"><i class="fa-solid fa-dollar-sign"></i> Amount</label>
+                <input type="number" id="amount" step="0.01" min="0" required />
+            </div>
+            <div class="form-group">
+                <label for="category"><i class="fa-solid fa-list"></i> Category</label>
+                <select id="category" required>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date"><i class="fa-solid fa-calendar-day"></i> Date</label>
+                <input type="date" id="date" required />
+            </div>
+            <button type="submit" class="btn"><i class="fa-solid fa-plus"></i> Add Expense</button>
+        </form>
+
+        <section class="expenses">
+            <h2>Expenses</h2>
+            <table id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="total">
+                <strong>Total:</strong> $<span id="total-amount">0.00</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
